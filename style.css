@@ -784,6 +784,28 @@ button.chip-socials.chip-copied {
   .site-footer {
     padding: 2rem 24px;
   }
+
+  /* Performance: reduce expensive blur and disable drift animations on mobile */
+  .hero-orb {
+    filter: blur(50px);
+    will-change: auto;
+    animation: none;
+  }
+
+  .hero-orb-a {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-orb-b {
+    width: 240px;
+    height: 240px;
+  }
+
+  /* Reduce entrance animation travel distance on smaller screens */
+  [data-animate] {
+    transform: translateY(16px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -796,6 +818,18 @@ button.chip-socials.chip-copied {
   .skill-chip {
     font-size: 0.8rem;
     padding: 5px 11px;
+  }
+
+  /* Prevent hero title from wrapping on narrow iPhone screens */
+  .welcome-title {
+    font-size: 8vw;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  /* Tighten subtitle letter-spacing so it reads cleanly at small sizes */
+  .welcome-subtitle {
+    letter-spacing: 0.15em;
   }
 }
 

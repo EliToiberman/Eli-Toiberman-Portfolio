@@ -235,7 +235,7 @@ document.querySelectorAll('.chip-email').forEach(btn => {
       btn.classList.add('chip-copied');
       setTimeout(() => {
         btn.classList.remove('chip-copied');
-        buildWaveSpans(btn);
+        btn.textContent = 'Email';
       }, 2000);
     }
 
